@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Wifeey ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+ font-family:Poppins,sans-serif;
+ color:#78415f;
+ background:linear-gradient(135deg,#fff0f7,#f0e7ff,#ffe5ef);
+ overflow-x:hidden
+}
+.hidden{display:none!important}
+button{cursor:pointer;font-family:inherit}
+.btn{
+ border:0;border-radius:30px;padding:13px 24px;
+ background:linear-gradient(45deg,#ed70a9,#ad8be8);
+ color:white;font-weight:bold;margin:8px;
+ box-shadow:0 5px 18px #bd75a544
+}
+.btn:hover{transform:translateY(-2px)}
+.script,h1,h2{font-family:Pacifico,cursive}
+#gate{
+ min-height:100vh;display:grid;place-items:center;padding:20px
+}
+.gate-card{
+ max-width:420px;width:100%;background:white;
+ padding:35px 24px;border-radius:30px;text-align:center;
+ box-shadow:0 15px 45px #bd75a544
+}
+.gate-card h1{font-size:38px;color:#df5899;margin:12px}
+.big-heart{font-size:65px;animation:pulse 1.3s infinite}
+.gate-card p{line-height:1.8;margin:15px 0}
+.gate-card input{
+ width:100%;padding:14px;border:2px solid #f1bdd8;
+ border-radius:14px;text-align:center;font-size:19px;margin:12px 0
+}
+#error{color:#d34c7e;min-height:22px;font-size:13px}
+header{text-align:center;padding:70px 18px 45px}
+header h1{
+ color:#df5899;font-size:clamp(40px,8vw,72px);
+ line-height:1.4;margin:20px 0
+}
+header p{max-width:650px;margin:auto;line-height:2}
+.tag{
+ display:inline-block;background:white;padding:9px 18px;
+ border-radius:30px;color:#d65c98
+}
+section{max-width:1100px;margin:auto;padding:38px 20px}
+.section-title{
+ text-align:center;color:#d65c98;
+ font-size:clamp(27px,5vw,38px);margin-bottom:25px
+}
+.intro,.surprise-box,.reasons{
+ background:#ffffffdd;padding:28px;border-radius:25px;
+ text-align:center;line-height:2;
+ box-shadow:0 8px 25px #bd75a522
+}
+.gallery{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+ gap:18px
+}
+.photo-card,.video-card{
+ background:white;padding:11px;border-radius:20px;
+ box-shadow:0 8px 25px #bd75a522;min-width:0
+}
+.photo-card img{
+ width:100%;height:270px;object-fit:cover;
+ display:block;border-radius:14px;background:#ffe5f1
+}
+.photo-card p,.video-card p{
+ text-align:center;color:#d65c98;font-weight:600;padding:12px 4px
+}
+.videos{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:18px
+}
+.video-card video{
+ display:block;width:100%;max-height:480px;
+ aspect-ratio:9/16;object-fit:contain;
+ background:#211827;border-radius:14px
+}
+.video-status{text-align:center;font-size:12px;color:#a34d79}
+.letters{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+ gap:15px
+}
+.letter{
+ background:white;border:0;padding:22px 10px;
+ border-radius:20px;text-align:center;color:#78415f;
+ box-shadow:0 8px 20px #bd75a522
+}
+.letter:hover{transform:translateY(-4px)}
+.letter span{font-size:38px}
+.letter h3{color:#d65c98;margin:10px}
+#letterPopup{
+ position:fixed;inset:0;background:#44253fbd;
+ z-index:100;display:grid;place-items:center;padding:18px
+}
+.paper{
+ background:#fffafd;padding:28px 22px;
+ border-radius:25px;width:min(100%,480px);
+ max-height:85vh;overflow:auto;text-align:center
+}
+.paper h2{color:#d65c98;margin-bottom:18px}
+.paper p{white-space:pre-line;line-height:2;font-size:14px}
+.cake,.gift{font-size:80px;display:block;margin:20px}
+.message{
+ font:clamp(20px,4vw,27px) Pacifico,cursive;
+ color:#d65c98;margin:20px auto;line-height:1.8
+}
+footer{text-align:center;padding:45px 15px;line-height:2}
+footer h2{color:#d65c98;font-size:30px}
+.heart{
+ position:fixed;bottom:-35px;z-index:50;
+ pointer-events:none;animation:float 7s linear forwards
+}
+@keyframes float{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+@keyframes pulse{50%{transform:scale(1.13)}}
+@media(max-width:600px){
+ header{padding:50px 15px 35px}
+ section{padding:30px 15px}
+ .intro,.surprise-box,.reasons{padding:22px 16px}
+ .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .photo-card img{height:220px}
+ .videos{grid-template-columns:1fr}
+ .video-card video{max-height:500px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- BIRTHDAY LOCK -->
+
+<div id="gate">
+ <div class="gate-card">
+  <div class="big-heart">💗</div>
+  <h1>Hey Wifeey!</h1>
+  <p>A magical little birthday world has been created just for you! 🎀</p>
+  <h3>When is your birthday? 🎂</h3>
+  <input id="birthday" placeholder="MM/DD" inputmode="numeric">
+  <button class="btn" onclick="unlock()">Unlock My Surprise 💝</button>
+  <div id="error"></div>
+  <small>Hint: Your special day 🌷</small>
+ </div>
+</div>
+
+<div id="website" class="hidden">
+
+<!-- HOME -->
+
+<header>
+ <div class="tag">🎀 A LITTLE WORLD MADE FOR YOU 🎀</div>
+ <h1>Happy Birthday<br>Wifeey! 💗</h1>
+ <p>To the most special girl, Aakriti Bhagat. This little world is filled with memories, surprises and sweet words made especially for you. 🌸</p>
+ <button class="btn" onclick="goTo('memories')">Explore Your Surprise ✨</button>
+</header>
+
+<!-- INTRO -->
+
+<section>
+ <div class="intro">
+  <h2 class="section-title">Dear Aakriti 🌷</h2>
+  Welcome to your own little world, Wifeey!
+  Today is all about celebrating you, your happiness,
+  your dreams and all the beautiful memories.
+  I made this special place so you can always come
+  back and remember these little moments.
+  <br><br>
+  Happy Birthday, my Wifeey! 🧸💗
+ </div>
+</section>
+
+<!-- PHOTOS -->
+
+<section id="memories">
+ <h2 class="section-title">Our Little Memories 📸</h2>
+ <div class="gallery">
+
+  <div class="photo-card">
+   <img src="./holdinghand.jpeg" alt="Holding hands"
+   onerror="photoError(this,'holdinghand.jpeg')">
+   <p>Hand in Hand 🫶</p>
+  </div>
+
+  <div class="photo-card">
+   <img src="./kiss%20memory.jpeg" alt="Sweet memory"
+   onerror="photoError(this,'kiss memory.jpeg')">
+   <p>Sweet Memories 💋</p>
+  </div>
+
+  <div class="photo-card">
+   <img src="./photo1.jpeg" alt="Favourite photo"
+   onerror="photoError(this,'photo1.jpeg')">
+   <p>My Favourite Picture 🌸</p>
+  </div>
+
+  <div class="photo-card">
+   <img src="./selfie1.jpeg" alt="Selfie one"
+   onerror="photoError(this,'selfie1.jpeg')">
+   <p>Beautiful You 💗</p>
+  </div>
+
+  <div class="photo-card">
+   <img src="./selfie2.jpeg" alt="Selfie two"
+   onerror="photoError(this,'selfie2.jpeg')">
+   <p>Another Sweet Memory 🥹</p>
+  </div>
+
+ </div>
+</section>
+
+<!-- VIDEOS -->
+
+<section id="videos">
+ <h2 class="section-title">Our Video Memories 🎬</h2>
+ <div class="videos">
+
+  <div class="video-card">
+   <video controls playsinline preload="metadata">
+    <source src="./bhabhijee1.mp4" type="video/mp4">
+   </video>
+   <p>Memory Number One 💗</p>
+   <div class="video-status"></div>
+  </div>
+
+  <div class="video-card">
+   <video controls playsinline preload="metadata">
+    <source src="./bhabhijee2.mp4" type="video/mp4">
+   </video>
+   <p>Memory Number Two 🧸</p>
+   <div class="video-status"></div>
+  </div>
+
+  <div class="video-card">
+   <video controls playsinline preload="metadata">
+    <source src="./bhabhijee3.mp4" type="video/mp4">
+   </video>
+   <p>Memory Number Three 🌷</p>
+   <div class="video-status"></div>
+  </div>
+
+ </div>
+</section>
+
+<!-- LOVE LETTERS -->
+
+<section id="letters">
+ <h2 class="section-title">Little Love Letters 💌</h2>
+ <p style="text-align:center;margin-bottom:22px">
+  Tap each envelope to open your letter. 💗
+ </p>
+
+ <div class="letters">
+  <button class="letter" onclick="openLetter(0)">
+   <span>💌</span><h3>Letter One</h3><small>A little hello</small>
+  </button>
+  <button class="letter" onclick="openLetter(1)">
+   <span>🌷</span><h3>Letter Two</h3><small>A reminder</small>
+  </button>
+  <button class="letter" onclick="openLetter(2)">
+   <span>🧸</span><h3>Letter Three</h3><small>Our memories</small>
+  </button>
+  <button class="letter" onclick="openLetter(3)">
+   <span>💕</span><h3>Letter Four</h3><small>For your smile</small>
+  </button>
+  <button class="letter" onclick="openLetter(4)">
+   <span>✨</span><h3>Letter Five</h3><small>A birthday wish</small>
+  </button>
+  <button class="letter" onclick="openLetter(5)">
+   <span>❤️</span><h3>Final Letter</h3><small>From my heart</small>
+  </button>
+ </div>
+</section>
+
+<!-- LETTER POPUP -->
+
+<div id="letterPopup" class="hidden">
+ <div class="paper">
+  <h2 id="letterTitle"></h2>
+  <p id="letterText"></p>
+  <button class="btn" onclick="closeLetter()">Close Letter 💌</button>
+ </div>
+</div>
+
+<!-- REASONS -->
+
+<section>
+ <h2 class="section-title">Things To Celebrate 🌸</h2>
+ <div class="reasons">
+  💗 Your beautiful personality<br>
+  🌷 Your dreams and ambitions<br>
+  🧸 Our little happy moments<br>
+  ✨ Your unique way of being you<br>
+  🎀 All the lovely things ahead of you
+ </div>
+</section>
+
+<!-- CAKE -->
+
+<section>
+ <div class="surprise-box">
+  <h2 class="section-title">A Birthday Cake For You 🎂</h2>
+  <span class="cake">🎂</span>
+  <p>Close your eyes, make a wish and get ready! 💗</p>
+  <button class="btn" onclick="cakeSurprise()">Cut Your Cake 🎂</button>
+  <div id="cakeMessage" class="message"></div>
+ </div>
+</section>
+
+<!-- GIFT -->
+
+<section>
+ <div class="surprise-box">
+  <h2 class="section-title">One More Surprise 🎁</h2>
+  <span class="gift" id="giftEmoji">🎁</span>
+  <p>Wifeey, there is one more surprise waiting for you!</p>
+  <button class="btn" onclick="openGift()">Open Your Gift 💝</button>
+  <div id="giftMessage" class="message"></div>
+ </div>
+</section>
+
+<!-- FINAL -->
+
+<section>
+ <div class="intro">
+  <h2 class="section-title">One Last Thing, Wifeey 💗</h2>
+  I hope this little website brings a smile to your face.
+  May your new year be full of happiness, laughter,
+  beautiful opportunities and unforgettable memories.
+  <br><br>
+  <h2 style="color:#df5899">Happy Birthday Aakriti! 🎂</h2>
+  <div style="font-size:28px;margin-top:15px">💗🌷🧸🎀💌</div>
+ </div>
+</section>
+
+<footer>
+ <h2>Made With Love For Wifeey 💗</h2>
+ <p>A little website, a lot of memories and endless birthday wishes. 🌸</p>
+</footer>
+
+</div>
+
+<script>
+
+/* PASSWORD */
+
+function unlock(){
+ const value=document.getElementById("birthday").value.trim()
+ .replace(/[.\-\s]/g,"/");
+
+ if(["08/13","8/13","0813"].includes(value)){
+  document.getElementById("gate").classList.add("hidden");
+  document.getElementById("website").classList.remove("hidden");
+  window.scrollTo(0,0);
+  startHearts();
+ }else{
+  document.getElementById("error").textContent=
+  "Oops! Try again, Wifeey! 💗";
+ }
+}
+
+document.getElementById("birthday").addEventListener("keydown",e=>{
+ if(e.key==="Enter")unlock();
+});
+
+function goTo(id){
+ document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* PHOTO ERROR */
+
+function photoError(img,name){
+ const box=document.createElement("div");
+ box.style.cssText="height:220px;display:grid;place-items:center;background:#fff0f7;color:#a34d79;text-align:center;font-size:12px;padding:12px";
+ box.textContent="Photo not found: "+name;
+ img.replaceWith(box);
+}
+
+/* VIDEO ERROR */
+
+document.querySelectorAll(".video-card video").forEach(video=>{
+ const status=video.parentElement.querySelector(".video-status");
+ video.addEventListener("error",()=>{
+  status.textContent="Video could not load. Check filename or MP4 encoding.";
+ });
+ video.addEventListener("loadedmetadata",()=>{
+  status.textContent="";
+ });
+});
+
+/* LOVE LETTERS */
+
+const letters=[
+{
+title:"Dear Wifeey 💗",
+text:`Dear Aakriti,
+
+I wanted to make something special for your birthday.
+
+You are an important person in my life, and every little memory we share deserves a special place.
+
+I hope your birthday is as lovely as the happiness you bring into my days.
+
+Happy Birthday, Wifeey! 💗`
+},
+{
+title:"A Little Reminder 🌷",
+text:`Hey Wifeey!
+
+Never forget how special you are.
+
+Keep smiling, keep dreaming and keep being yourself.
+
+You deserve happiness, kindness and beautiful opportunities.
+
+Sending you the biggest birthday wishes! 🌸`
+},
+{
+title:"Our Memories 🧸",
+text:`Some moments become memories that we want to keep forever.
+
+The little conversations, silly moments, pictures and smiles...
+
+I hope we keep making many more beautiful memories together.
+
+Here's to all the moments ahead! 💕`
+},
+{
+title:"You Are Special 💕",
+text:`Dear Wifeey,
+
+Thank you for being yourself.
+
+I appreciate the little moments, the laughs and all the memories.
+
+I hope today reminds you how much you are appreciated.
+
+Stay happy and keep shining! ✨`
+},
+{
+title:"My Birthday Wish ✨",
+text:`My wish for you is simple.
+
+May you achieve your dreams.
+May you find happiness in little things.
+May you always have reasons to smile.
+May your future be filled with wonderful surprises.
+
+Happy Birthday, Aakriti! 🎂`
+},
+{
+title:"One Last Letter ❤️",
+text:`Dear Wifeey,
+
+If I could give you one thing today, it would be the ability to see how special you are.
+
+This website is just a little collection of memories and wishes.
+
+I hope you enjoyed every surprise.
+
+Happy Birthday, Aakriti Bhagat!
+
+With lots of love,
+Your special person ❤️`
+}
+];
+
+function openLetter(index){
+ document.getElementById("letterTitle").textContent=letters[index].title;
+ document.getElementById("letterText").textContent=letters[index].text;
+ document.getElementById("letterPopup").classList.remove("hidden");
+}
+
+function closeLetter(){
+ document.getElementById("letterPopup").classList.add("hidden");
+}
+
+/* CAKE */
+
+function cakeSurprise(){
+ document.getElementById("cakeMessage").textContent=
+ "Yayyy! 🎉 May all your beautiful wishes come true! Happy Birthday Wifeey! 💗";
+ burstHearts();
+}
+
+/* GIFT */
+
+function openGift(){
+ document.getElementById("giftEmoji").textContent="💝";
+ document.getElementById("giftMessage").textContent=
+ "Surprise! 🎀 The real gift is a collection of memories, smiles and lovely moments. Happy Birthday, Wifeey! ❤️";
+ burstHearts();
+}
+
+/* FLOATING HEARTS */
+
+let heartTimer=null;
+
+function createHeart(){
+ const heart=document.createElement("div");
+ heart.className="heart";
+ const emojis=["💗","💕","💖","💞","🌸","✨"];
+ heart.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+ heart.style.left=Math.random()*100+"vw";
+ heart.style.fontSize=(15+Math.random()*20)+"px";
+ heart.style.animationDuration=(5+Math.random()*5)+"s";
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),10000);
+}
+
+function startHearts(){
+ if(!heartTimer)heartTimer=setInterval(createHeart,650);
+}
+
+function burstHearts(){
+ for(let i=0;i<18;i++)setTimeout(createHeart,i*100);
+}
+
+</script>
+</body>
+</html>
